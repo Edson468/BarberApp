@@ -1,0 +1,114 @@
+/* Container Principal (ocupa toda a tela e define o fundo cinza) */
+.login-container {
+    /* MUDANÇA: Cor de fundo alterada para CINZA ESCURO */
+    background-color: #282c34; 
+    
+    /* Faz o container ocupar a altura total da viewport */
+    height: 100vh; 
+    
+    /* Centraliza o bloco de login verticalmente e horizontalmente */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+/* O Bloco Central que contém o Formulário e a Imagem */
+.login-block {
+    display: flex; /* Mantém o formulário e a imagem lado a lado */
+    max-width: 900px; /* Reduz o tamanho máximo do bloco central */
+    width: 90%; 
+    border-radius: 12px;
+    overflow: hidden; /* Garante que os painéis internos respeitem o border-radius */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar */
+}
+
+/* Estilo Básico dos Painéis (50% da largura do .login-block) */
+.login-panel {
+    width: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+}
+
+/* Painel Esquerdo (Formulário) */
+.left-panel {
+    background-color: white; /* Cor de fundo do painel esquerdo */
+}
+
+/* A Caixa Branca do Formulário (o conteúdo interno) */
+.login-card {
+    padding: 40px 50px; 
+    max-width: 400px; 
+    width: 100%;
+    text-align: center; 
+}
+
+/* Título */
+.login-card h1 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Campos de Input */
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+/* Link "Esqueceu a Senha?" */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: -10px; 
+    margin-bottom: 20px;
+}
+
+/* Botão Entrar (Laranja) */
+.btn-entrar {
+    width: 100%;
+    padding: 12px;
+    background-color: #e67e22; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+}
+
+.btn-entrar:hover {
+    background-color: #d35400; 
+}
+
+/* Texto e Link Cadastre-se */
+.signup-text {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.signup-link {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Painel Direito (Imagem de Fundo) */
+.right-panel {
+    /* A imagem de fundo agora é definida via 'style' no componente JSX */
+    background-size: cover; 
+    background-position: center; 
+}

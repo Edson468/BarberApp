@@ -1,0 +1,248 @@
+/* 
+ * Contêiner principal da página de caixa.
+ * Ele herda a margem e a transição da classe .page-content (definida em App.css)
+ * e usa flexbox para centralizar o card de conteúdo.
+ */
+.caixa-container-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffffff; /* Fundo alterado para branco */
+    min-height: 100vh;
+}
+
+/* O "card" de conteúdo que envolve tudo */
+.caixa-content {
+    background-color: #3f3f3f; 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    max-width: 1100px; /* Largura máxima para a página de caixa */
+}
+
+/* Cabeçalho da caixa */
+.caixa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #555;
+}
+
+.caixa-data-atual span {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.caixa-header h2 {
+    font-size: 1.8em;
+    color: #e67e22; /* Laranja */
+    margin: 0;
+    flex-grow: 1; /* Faz o título ocupar o centro */
+    text-align: center;
+}
+
+/* --- NOVOS ESTILOS PARA BOTÕES DE EXPORTAÇÃO --- */
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinha os botões à direita dentro do seu contêiner */
+    /* A largura deve ser igual à do contêiner da data para centralizar o título */
+    width: 250px; 
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-export-csv, .btn-export-pdf {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.btn-export-csv { background-color: #27ae60; } /* Verde */
+.btn-export-pdf { background-color: #e74c3c; } /* Vermelho */
+/* --- FIM DOS NOVOS ESTILOS --- */
+
+.periodo-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-periodo {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-periodo:hover {
+    background-color: #666;
+}
+
+.btn-periodo.active {
+    background-color: #e67e22; /* Laranja para o botão ativo */
+}
+
+/* Seção de filtros */
+.filtros-section {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; 
+    min-width: 150px; 
+}
+
+.filtro-group label {
+    font-weight: bold;
+    color: #e67e22;
+    font-size: 0.8em; 
+}
+
+.filtro-group input[type="date"],
+.filtro-group select {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px 10px; 
+    border-radius: 4px;
+    color: #333;
+    font-size: 0.9em; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+/* Estilo específico para os inputs de data no grupo de período */
+.date-inputs {
+    display: flex;
+    gap: 8px; 
+}
+
+.date-inputs input[type="date"] {
+    flex: 1;
+}
+
+/* --- NOVOS ESTILOS PARA OS BOTÕES DE AÇÃO DO FILTRO --- */
+.filtro-actions {
+    /* Garante que os botões fiquem à esquerda e abaixo dos campos */
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Ocupa a largura total para quebrar a linha */
+    padding-top: 10px;
+}
+
+.filtro-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    min-width: 150px; /* Garante tamanho mínimo para uniformidade */
+}
+
+.btn-apply {
+    background-color: #27ae60; /* Verde */
+    color: white;
+}
+
+.btn-apply:hover {
+    background-color: #2ecc71;
+}
+
+.btn-clear {
+    background-color: #e74c3c; /* Vermelho */
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #c0392b;
+}
+/* --- FIM NOVOS ESTILOS --- */
+
+
+/* Título da seção de serviços */
+.servicos-title {
+    font-size: 1.4em;
+    color: #e67e22;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+/* Container da tabela para controle de overflow */
+.tabela-servicos-container {
+    overflow-x: auto; 
+    flex-grow: 1; 
+}
+
+.tabela-servicos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden; 
+}
+
+.tabela-servicos th,
+.tabela-servicos td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #555;
+    color: #000;
+}
+
+.tabela-servicos th {
+    background-color: #4a4a4a;
+    color: white;
+    font-weight: bold;
+}
+
+.tabela-servicos tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilo para a linha total no rodapé da tabela */
+.tabela-servicos tfoot tr {
+    background-color: #4a4a4a;
+    font-weight: bold;
+    /* ALTERAÇÃO AQUI: Cor do texto no rodapé da tabela */
+    color: white;
+}
+
+.tabela-servicos tfoot td {
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.tabela-servicos tfoot .total-label {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.tabela-servicos tfoot .total-valor {
+    text-align: left;
+    white-space: nowrap;
+}

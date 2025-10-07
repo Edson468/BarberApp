@@ -1,0 +1,238 @@
+/* 
+ * Contêiner principal da página de barbeiros.
+ * Ele herda a margem e a transição da classe .page-content (definida em App.css)
+ * e usa flexbox para centralizar o card de conteúdo.
+ */
+.cadastro-barbeiro-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffffff; /* Altera o fundo da página para branco */
+    /* A altura e o padding já são gerenciados pela classe .page-content em App.css */
+}
+
+/* O container principal que envolve o formulário e a lista */
+.cadastro-barbeiro-content {
+    background-color: #3f3f3f; 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    max-width: 900px; /* Limita a largura para consistência */
+}
+
+/* --- Estilos compartilhados (reutilizados de outros CSS) --- */
+
+.cadastro-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+}
+
+.cadastro-header h2 {
+    font-size: 1.8em;
+    color: #ff9800;
+    font-weight: 700;
+}
+
+.form-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.form-group input {
+    background-color: #555;
+    border: 1px solid #666;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: #f4f4f4;
+    font-size: 1em;
+    height: 40px;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    background-color: #666;
+    border-color: #ff9800;
+    box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.5);
+    outline: none;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
+
+.btn-save, .btn-cancel {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-save {
+    background-color: #4CAF50;
+    color: white;
+}
+.btn-save:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #d32f2f;
+}
+
+.barbeiros-list-section {
+    margin-top: 20px;
+}
+
+.barbeiros-list-section h3 {
+    font-size: 1.4em;
+    color: #f4f4f4;
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.list-buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.list-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.btn-edit {
+    background-color: #ff9800;
+    color: #333;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}
+
+.barbeiros-list {
+    background-color: #363636;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.barbeiro-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.barbeiro-item:hover {
+    background-color: #454545;
+}
+
+.barbeiro-item.selected {
+    background-color: #4a4a4a;
+    border: 1px solid #ff9800;
+}
+
+.barbeiro-item input[type="radio"] {
+    margin-right: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.barbeiro-item input[type="radio"]:checked {
+    border-color: #ff9800;
+}
+
+.barbeiro-item input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff9800;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.barbeiro-info {
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.barbeiro-codigo {
+    width: 60px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.barbeiro-nome {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.barbeiro-celular {
+    width: 150px;
+    text-align: left;
+    color: #ccc;
+}

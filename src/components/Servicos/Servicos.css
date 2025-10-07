@@ -1,0 +1,304 @@
+/* 
+ * Contêiner principal da página de serviços.
+ * Ele herda a margem e a transição da classe .page-content (definida em App.css)
+ * e usa flexbox para centralizar o card de conteúdo.
+ */
+.servicos-container-wrapper {
+    display: flex;
+    /* Centraliza a caixa de conteúdo horizontalmente */
+    justify-content: center; 
+    /* Alinha a caixa de conteúdo no topo */
+    align-items: flex-start; 
+}
+
+/* O container principal que envolve o formulário e a lista */
+.cadastro-servicos-container {
+    /* Fundo da caixa na cor cinza, como solicitado (mantendo o tom do design) */
+    background-color: #3f3f3f; 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    max-width: 900px; /* Limita a largura para o layout da imagem */
+}
+
+/* --- Cabeçalho e Títulos --- */
+
+.cadastro-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #555; /* Linha divisória */
+    padding-bottom: 10px;
+}
+
+.cadastro-header h2 {
+    font-size: 1.8em;
+    color: #ff9800; /* Laranja/Âmbar de destaque */
+    font-weight: 700;
+}
+
+/* --- Formulário de Cadastro --- */
+
+.form-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha se não houver espaço */
+    margin-bottom: 20px;
+    align-items: flex-end; /* Alinha os campos na linha base, crucial para o visual */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.form-group label {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #ccc; /* Cor da label um pouco mais clara */
+}
+
+.form-group input,
+.form-group select {
+    background-color: #ffffff; /* Fundo branco para os campos */
+    border: 1px solid #ccc; /* Borda cinza claro para contraste */
+    padding: 10px 12px;
+    border-radius: 6px; /* Cantos mais arredondados */
+    color: #000000; /* Cor do texto preta para melhor contraste */
+    font-size: 1em;
+    height: 40px; /* Altura padrão para todos os campos */
+    box-sizing: border-box; /* Inclui padding e borda na altura */
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    background-color: #ffffff; /* Mantém o fundo branco ao focar */
+    border-color: #ff9800;
+    box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.5);
+    outline: none;
+}
+
+/* Larguras específicas dos campos para replicar o visual da imagem */
+.codigo-group {
+    width: 80px;
+    flex-grow: 0;
+}
+.descricao-group {
+    flex-grow: 3;
+}
+.valor-group, .tempo-group {
+    width: 150px;
+    flex-grow: 1;
+    max-width: 150px;
+}
+
+/* --- Botões de Ação do Formulário (Gravar/Limpar) --- */
+.action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
+
+.btn-save, .btn-clear {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-save {
+    background-color: #4CAF50; /* Verde, cor do botão Gravar */
+    color: white;
+}
+.btn-save:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.btn-clear {
+    background-color: #777; /* Cinza para Limpar */
+    color: white;
+}
+.btn-clear:hover {
+    background-color: #666;
+}
+
+/* --- Seção da Lista de Serviços --- */
+
+.servicos-list-section {
+    margin-top: 20px;
+}
+
+.servicos-list-section h3 {
+    font-size: 1.4em;
+    color: #f4f4f4; /* Título da lista em branco */
+    border-bottom: 2px solid #ff9800; /* Sublinha laranja de destaque */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.list-buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.list-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.btn-edit {
+    background-color: #ff9800; /* Laranja */
+    color: #333; /* Texto escuro no botão laranja */
+}
+
+.btn-delete {
+    background-color: #e74c3c; /* Vermelho */
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}
+
+.servicos-list {
+    background-color: #363636; /* Fundo da lista mais escuro que o container */
+    border-radius: 8px;
+    padding: 5px; /* Espaçamento interno da lista */
+}
+
+.servico-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.servico-item:hover {
+    background-color: #454545;
+}
+
+.servico-item.selected {
+    background-color: #4a4a4a;
+    border: 1px solid #ff9800; /* Borda laranja para item selecionado */
+}
+
+/* Estilização do Radio Button (Círculo de Seleção) */
+.servico-item input[type="radio"] {
+    margin-right: 20px;
+    /* Reset de aparência */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.servico-item input[type="radio"]:checked {
+    border-color: #ff9800;
+}
+
+.servico-item input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff9800;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.servico-info {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 60px 3fr 1fr 1fr; /* Ajustado para 4 colunas */
+    gap: 20px;
+    align-items: center;
+}
+
+.servico-codigo {
+    width: 60px; /* Largura fixa para código */
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.servico-descricao {
+    flex-grow: 1;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.servico-valor, .servico-tempo {
+    width: 100px; /* Largura para Valor e Tempo */
+    text-align: right;
+    color: #ccc;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .servicos-container-wrapper {
+        margin-left: 0;
+        padding: 20px 10px;
+    }
+
+    .cadastro-servicos-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .form-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .codigo-group, .valor-group, .tempo-group {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .servico-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .servico-codigo, .servico-valor, .servico-tempo {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .servico-descricao {
+        font-size: 1em;
+    }
+}

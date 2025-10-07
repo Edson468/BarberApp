@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+/* --- REGRAS DE LAYOUT DO DASHBOARD REATORADAS --- */
+
+/* 
+ * Define uma classe de layout padrão para o conteúdo de todas as páginas.
+ * Esta regra garante que, por padrão, o conteúdo comece após o menu lateral aberto.
+ */
+.page-content {
+  flex-grow: 1;
+  padding: 30px;
+  margin-left: 220px; /* Largura do menu lateral aberto */
+  transition: margin-left 0.3s ease; /* Animação suave para a mudança de margem */
+}
+
+/* 
+ * Quando o menu é recolhido, esta regra ajusta a margem do conteúdo
+ * para a nova largura do menu, fazendo a tela "crescer" e ocupar o espaço.
+ */
+.dashboard-container.sidebar-collapsed .page-content {
+  margin-left: 80px; /* Largura do menu lateral recolhido */
+}
