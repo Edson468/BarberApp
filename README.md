@@ -1,74 +1,98 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# BarberApp 2.0 - Gestor de Barbearia Full-Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚀 Visão Geral do Projeto
 
-## Available Scripts
+O **BarberApp 2.0** é um sistema completo de gestão de barbearias, desenvolvido como uma **reconstrução moderna** de um projeto anterior (feito em Django).
 
-In the project directory, you can run:
+O foco desta versão é oferecer uma **interface moderna, rápida e dinâmica** para gerenciar clientes, serviços, agendamentos e, principalmente, o **controle financeiro** da barbearia.
+
+### 🛠️ Stack Tecnológica
+
+Este projeto utiliza uma arquitetura Full-Stack moderna (MERN/NERN-like):
+
+* **Front-end:** **React.js**
+* **Back-end:** **Node.js**
+* **Banco de Dados:** **SQLite** (Ideal para ambientes de pequeno e médio porte)
+
+## ✨ Principais Funcionalidades
+
+O BarberApp 2.0 foi desenhado para ser uma ferramenta essencial no dia a dia da barbearia, oferecendo as seguintes funcionalidades:
+
+### 📅 Agendamento Inteligente e Dinâmico
+* Otimização do tempo de agendamento com um sistema de **"autocompletar"** que sugere nomes de clientes, barbeiros e serviços, puxando automaticamente valores e tempo estimado do banco de dados.
+
+### 💰 Controle Financeiro Integrado
+* **Gestão de Despesas:** Módulo dedicado para o usuário registrar todas as despesas operacionais da barbearia (aluguel, produtos, etc.).
+* **Controle de Caixa:** O caixa agora contabiliza automaticamente as despesas inseridas, fornecendo um lucro/saldo mais preciso e em tempo real.
+
+### 📂 Relatórios e Exportação
+* Melhor controle de dados com a funcionalidade de **exportação de relatórios** e registros nos formatos **CSV** e **PDF**.
+
+### 👤 Cadastros Simplificados
+* Telas ágeis para o cadastro rápido e fácil de:
+    * Clientes
+    * Barbeiros
+    * Serviços
+
+---
+
+## 💻 Instalação e Execução Local
+
+Este projeto foi inicializado com o Create React App e possui um Back-end em Node.js.
+
+### Pré-requisitos
+
+* **Node.js** e **npm** (ou Yarn) instalados.
+* Conhecimento básico em **React.js** e **Node.js**.
+
+### Configuração
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/Edson468/BarberApp.git](https://github.com/Edson468/BarberApp.git)
+    cd BarberApp
+    ```
+
+2.  **Instale as dependências do Back-end (Node.js):**
+    * *Assumindo que o código do Back-end está em uma pasta chamada `server` ou na raiz:*
+    ```bash
+    # Se o Back-end estiver em uma pasta separada (ex: server)
+    cd server
+    npm install
+    cd ..
+    ```
+
+3.  **Instale as dependências do Front-end (React):**
+    ```bash
+    npm install
+    ```
+
+4.  **Configurar e Iniciar o Back-end:**
+    * Crie o arquivo de banco de dados SQLite e inicie o servidor (instruções específicas podem variar dependendo da sua estrutura de pasta e scripts).
+    ```bash
+    # Exemplo (pode variar)
+    npm run start:server 
+    ```
+
+5.  **Iniciar o Front-end (React):**
+    ```bash
+    npm start
+    ```
+
+O aplicativo será executado em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no seu navegador.
+
+---
+
+## 📜 Scripts do Create React App
+
+No diretório do projeto, você pode executar:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Executa o aplicativo React em modo de desenvolvimento.
 
 ### `npm run build`
+Cria a versão de produção do aplicativo na pasta `build`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# BarberApp
->>>>>>> 153d712cffc643dbad0a962b81519393290abfac
+### `npm test`
+Inicia o executor de testes em modo interativo.
